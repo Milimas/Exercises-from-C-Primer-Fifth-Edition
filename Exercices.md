@@ -155,3 +155,39 @@ std::cout << "The sum of << v1" ;
 std::cout << " and " << v2 ;
 std::cout << " is " << v1 + v2 << std::endl ;
 ```
+
+## Exercises Section 1.3
+
+### Exercise 1.7:
+
+Compile a program that has incorrectly nested comments.
+
+```c++
+/*
+* comment pairs /* */ cannot nest.
+* ''cannot nest'' is considered source code,
+* as is the rest of the program
+*/
+int main()
+{
+ return 0;
+}
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+main.cpp:2:17: warning: "/*" within comment [-Wcomment]
+ * comment pairs /* */
+
+main.cpp:4:7: error: empty character constant
+     * ''cannot nest'' is considered source code,
+       ^~~~~~~~
+main.cpp:4:20: error: empty character constant
+     * ''cannot nest'' is considered source code,
+                    ^~
+main.cpp:3:1: error: 'cannot' does not name a type
+ cannot nest.
+ ^~~~~~
+make: *** [makefile:8: main] Error 1
+```
