@@ -4,12 +4,10 @@ using namespace std;
 
 int main()
 {
-    int sum = 0, value = 50;
-    while (value <= 100)
+    int value = 10;
+    while (value >= 0)
     {
-        sum += value;
-        value++;
+        cout << value-- << endl;
     }
-    cout << "Sum of 50 to 100 inclusive is " << sum << endl;
     return 0;
 }
