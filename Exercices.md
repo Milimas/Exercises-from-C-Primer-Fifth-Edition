@@ -8,6 +8,8 @@ Review the documentation for your compiler and determine
 what file naming convention it uses. Compile and run the main program from
 page 2.
 
+**Answer:**
+
 ```c++
 int main()
 {
@@ -26,6 +28,8 @@ g++ -Wall -o build\main main.cpp && build\main.exe
 Change the program to return -1. A return value of -1 is
 often treated as an indicator that the program failed. Recompile and rerun
 your program to see how your system treats a failure indicator from main.
+
+**Answer:**
 
 ```c++
 int main()
@@ -47,6 +51,8 @@ make: *** [makefile:8: main] Error -1
 
 Write a program to print Hello, World on the standard
 output.
+
+**Answer:**
 
 ```c++
 #include <iostream>
@@ -72,6 +78,8 @@ Hello, World
 Our program used the addition operator, +, to add two
 numbers. Write a program that uses the multiplication operator, \*, to print
 the product instead.
+
+**Answer:**
 
 ```c++
 #include <iostream>
@@ -102,6 +110,8 @@ The product of 2 and 3 is 6
 
 We wrote the output in one large statement. Rewrite the
 program to use a separate statement to print each operand.
+
+**Answer:**
 
 ```c++
 #include <iostream>
@@ -161,6 +171,8 @@ std::cout << " is " << v1 + v2 << std::endl ;
 ### Exercise 1.7:
 
 Compile a program that has incorrectly nested comments.
+
+**Answer:**
 
 ```c++
 /*
@@ -235,4 +247,30 @@ std::cout << "/*";
 std::cout << "*/";
 std::cout << /* */ "*/";
 std::cout << /* "*/ " /* " /*" */;
+```
+
+## Exercises Section 1.4.1
+
+### Exercise 1.9:
+
+Write a program that uses a while to sum the numbers from 50 to 100.
+
+**Answer:**
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int sum = 0, value = 50;
+    while (value <= 100)
+    {
+        sum += value;
+        value++;
+    }
+    cout << "Sum of 50 to 100 inclusive is " << sum << endl;
+    return 0;
+}
 ```
