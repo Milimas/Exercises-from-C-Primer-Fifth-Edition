@@ -4,10 +4,13 @@ using namespace std;
 
 int main()
 {
-    int value = 10;
-    while (value >= 0)
+    int start, end;
+    cout << "Enter starting number then ending number" << endl;
+    cin >> start >> end;
+    cout << "Numbers from " << start << " to " << end << endl;
+    while (start <= end)
     {
-        cout << value-- << endl;
+        cout << start++ << endl;
     }
     return 0;
 }
