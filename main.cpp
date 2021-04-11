@@ -1,9 +1,13 @@
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    int v1 = 0, v2 = 0;
-    std::cin >> v1 >> v2;
-    std::cout << v1 + v2 << std::endl;
+    int sum = 0, value = 0;
+    cout << "Enter the Set of numbers then press CTRL + Z + Enter to see the sum of the set:" << endl;
+    while (std::cin >> value)
+        sum += value;
+    cout << "Sum is: " << sum << endl;
     return 0;
 }
