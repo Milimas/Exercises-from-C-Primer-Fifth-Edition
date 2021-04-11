@@ -325,3 +325,21 @@ int main()
     return 0;
 }
 ```
+
+## Exercises Section 1.4.2
+
+### Exercise 1.12:
+
+What does the following `for` loop do? What is the final value
+of `sum`?
+
+```c++
+int sum = 0;
+for (int i = -100; i <= 100; ++i)
+    sum += i;
+```
+
+**Answer:**
+
+- This `for` loop execute the `body` 201 times by incrementing `i` from -100 to 100.
+- The final value of `sum` is 0.

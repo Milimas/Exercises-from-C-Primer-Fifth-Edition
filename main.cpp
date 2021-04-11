@@ -4,13 +4,12 @@ using namespace std;
 
 int main()
 {
-    int start, end;
-    cout << "Enter starting number then ending number" << endl;
-    cin >> start >> end;
-    cout << "Numbers from " << start << " to " << end << endl;
-    while (start <= end)
+    int sum, counter = 0;
+    for (int i = -100; i <= 100; ++i)
     {
-        cout << start++ << endl;
+        sum += i;
+        cout << ++counter << "\t" << i << "\t" << sum << endl;
     }
+
     return 0;
 }
