@@ -7,6 +7,12 @@ int main()
     int v1, v2;
     cout << "Enter two numbers:" << endl;
     cin >> v1 >> v2;
-    cout << "The product of " << v1 << " and " << v2 << " is " << v1 * v2 << endl;
+    cout << "The product of ";
+    cout << v1;
+    cout << " and ";
+    cout << v2;
+    cout << " is ";
+    cout << v1 * v2;
+    cout << endl;
     return 0;
 }

@@ -97,3 +97,39 @@ Enter two numbers:
 The product of 2 and 3 is 6
 
 ```
+
+### Exercise 1.5:
+
+We wrote the output in one large statement. Rewrite the
+program to use a separate statement to print each operand.
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int v1, v2;
+    cout << "Enter two numbers:" << endl;
+    cin >> v1 >> v2;
+    cout << "The product of ";
+    cout << v1;
+    cout << " and ";
+    cout << v2;
+    cout << " is ";
+    cout << v1 * v2;
+    cout << endl;
+    return 0;
+};
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+Enter two numbers:
+2
+2
+The product of 2 and 2 is 4
+
+```
