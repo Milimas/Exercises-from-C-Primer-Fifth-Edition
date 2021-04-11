@@ -4,12 +4,12 @@ using namespace std;
 
 int main()
 {
-    int sum, counter = 0;
-    for (int i = -100; i <= 100; ++i)
+    int sum = 0;
+    // keep executing the while as long as val is less than or equal to 10
+    for (int value = 1; value <= 10; value++)
     {
-        sum += i;
-        cout << ++counter << "\t" << i << "\t" << sum << endl;
+        sum += value; // assigns sum + val to sum
     }
-
+    cout << "Sum of 1 to 10 inclusive is " << sum << endl;
     return 0;
 }
