@@ -40,3 +40,29 @@ g++ -Wall -o build\main main.cpp && build\main.exe
 make: *** [makefile:8: main] Error -1
 
 ```
+
+## Exercises Section 1.2
+
+### Exercise 1.3:
+
+Write a program to print Hello, World on the standard
+output.
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout << "Hello, World" << endl;
+    return 0;
+}
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+Hello, World
+
+```
