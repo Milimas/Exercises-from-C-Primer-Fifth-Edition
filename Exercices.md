@@ -358,7 +358,6 @@ using namespace std;
 int main()
 {
     int sum = 0;
-    // keep executing the while as long as val is less than or equal to 10
     for (int value = 1; value <= 10; value++)
     {
         sum += value; // assigns sum + val to sum
@@ -367,3 +366,23 @@ int main()
     return 0;
 }
 ```
+
+### Exercise 1.14:
+
+Compare and contrast the loops that used a for with those using a while. Are there advantages or disadvantages to using either form?
+
+**Answer:**
+
+- Advantages:
+
+  - `for` loop:
+    - the variable `value` belong to the `for` loop scope we get rid of it after we finish with `for` loop
+    - `for` easy to read you have when it start `value = 1` and when it ends `value <= 10` and how much it icrement each loop `value++` in one line
+  - `while` loop:
+    - better to use with a condition or for infinit loop
+
+- disadvantages:
+  - `for` loop:
+    - can't be used with only a condition
+  - `while` loop:
+    - not a good practice to use it with increment
