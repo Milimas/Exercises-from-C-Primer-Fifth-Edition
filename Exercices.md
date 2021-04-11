@@ -191,3 +191,48 @@ main.cpp:3:1: error: 'cannot' does not name a type
  ^~~~~~
 make: *** [makefile:8: main] Error 1
 ```
+
+### Exercise 1.8:
+
+Indicate which, if any, of the following output statements are
+legal:
+
+1.
+
+```c++
+std::cout << "/*";
+```
+
+2.
+
+```c++
+std::cout << "*/";
+```
+
+3.
+
+```c++
+std::cout << /* "*/" */;
+```
+
+4.
+
+```c++
+std::cout << /* "*/" /* "/*" */;
+```
+
+**Answer:**
+
+1. legal
+2. legal
+3. illegal
+4. illegal
+
+**Fix:**
+
+```c++
+std::cout << "/*";
+std::cout << "*/";
+std::cout << /* */ "*/";
+std::cout << /* "*/ " /* " /*" */;
+```

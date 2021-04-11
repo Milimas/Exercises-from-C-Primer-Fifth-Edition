@@ -1,10 +1,12 @@
-/*
-* comment pairs /* */
-cannot nest.
-    * ''cannot nest'' is considered source code,
-    *as is the rest of the program
-            * /
-        int main()
+#include <iostream>
+
+using namespace std;
+
+int main()
 {
+    cout << "/*";
+    cout << "*/";
+    cout << /* */ "*/";
+    cout << /* "*/ " /* " /*" */;
     return 0;
 }
