@@ -133,3 +133,25 @@ Enter two numbers:
 The product of 2 and 2 is 4
 
 ```
+
+### Exercise 1.6:
+
+Explain whether the following program fragment is legal.
+
+```c++
+std::cout << "The sum of " << v1;
+          << " and " << v2;
+          << " is " << v1 + v2 << std::endl;
+```
+
+**Answer:**
+
+this program is not legal, each line need a `std::cout` before `<<`
+
+**Fix:**
+
+```c++
+std::cout << "The sum of << v1" ;
+std::cout << " and " << v2 ;
+std::cout << " is " << v1 + v2 << std::endl ;
+```
