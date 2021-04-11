@@ -18,7 +18,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 
 ```
@@ -39,7 +39,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 make: *** [makefile:8: main] Error -1
 
@@ -67,7 +67,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 Hello, World
 
@@ -97,7 +97,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 Enter two numbers:
 2
@@ -135,7 +135,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 Enter two numbers:
 2
@@ -187,7 +187,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 main.cpp:2:17: warning: "/*" within comment [-Wcomment]
  * comment pairs /* */
@@ -419,7 +419,7 @@ int main()
 **Answer:**
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 main.cpp:2:10: error: cannot declare '::main' to be a global variable
  int main ( {
@@ -473,7 +473,7 @@ make: *** [makefile:8: main] Error 1
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 main.cpp: In function 'int main()':
 main.cpp:5:17: error: 'v' was not declared in this scope
@@ -509,7 +509,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 Read each file.
 Update master.
@@ -530,7 +530,7 @@ int main()
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 1
 2
@@ -608,7 +608,7 @@ Compile and run the program from this section giving it only equal values as inp
 **Answer:**
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 1
 1
@@ -624,7 +624,7 @@ g++ -Wall -o build\main main.cpp && build\main.exe
 ```
 
 ```console
-C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+~$ make
 g++ -Wall -o build\main main.cpp && build\main.exe
 1
 2
@@ -645,4 +645,32 @@ g++ -Wall -o build\main main.cpp && build\main.exe
 8 occurs 1 times
 ^Z
 9 occurs 1 times
+```
+
+### Exercise 1.19:
+
+Revise the program you wrote for the exercises in § 1.4.1 (p. 13) that printed a range of numbers so that it handles input in which the first number is smaller than the second.
+
+**Answer:**
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int start, end;
+    cout << "Enter starting number then ending number" << endl;
+    cin >> start >> end;
+    if (start < end)
+    {
+        cout << "Numbers from " << start << " to " << end << endl;
+        while (start <= end)
+        {
+            cout << start++ << endl;
+        }
+    }
+    return 0;
+}
 ```
