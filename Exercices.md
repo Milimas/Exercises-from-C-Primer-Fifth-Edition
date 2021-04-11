@@ -600,3 +600,49 @@ int main()
 
 - if all the input values are all equal we will have an infinit loop
 - if there are no duplicated values we will keep geting `(input value) occurs 1 times`
+
+### Exercise 1.18:
+
+Compile and run the program from this section giving it only equal values as input. Run it again giving it values in which no number is repeated.
+
+**Answer:**
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+1
+1
+1
+1
+1
+1
+1
+1
+1
+^Z
+1 occurs 22 times
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+1
+2
+1 occurs 1 times
+3
+2 occurs 1 times
+4
+3 occurs 1 times
+5
+4 occurs 1 times
+6
+5 occurs 1 times
+7
+6 occurs 1 times
+8
+7 occurs 1 times
+9
+8 occurs 1 times
+^Z
+9 occurs 1 times
+```
