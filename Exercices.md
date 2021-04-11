@@ -386,3 +386,153 @@ Compare and contrast the loops that used a for with those using a while. Are the
     - can't be used with only a condition
   - `while` loop:
     - not a good practice to use it with increment
+
+### Exercise 1.15:
+
+Write programs that contain the common errors discussed in the box below. Familiarize yourself with the messages the compiler generates.
+
+```c++
+// error: missing ) in parameter list for main
+int main ( {
+ // error: used colon, not a semicolon, after endl
+ std::cout << "Read each file." << std::endl:
+ // error: missing quotes around string literal
+ std::cout << Update master. << std::endl;
+ // error: second output operator is missing
+ std::cout << "Write new master." std::endl;
+ // error: missing ; on return statement
+ return 0
+}
+```
+
+```c++
+#include <iostream>
+int main()
+{
+ int v1 = 0, v2 = 0;
+ std::cin >> v >> v2; // error: uses "v" not "v1"
+ // error: cout not defined; should be std::cout
+ cout << v1 + v2 << std::endl; return 0;
+}
+```
+
+**Answer:**
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+main.cpp:2:10: error: cannot declare '::main' to be a global variable
+ int main ( {
+          ^
+main.cpp:4:10: error: 'cout' is not a member of 'std'
+     std::cout << "Read each file." << std::endl :
+          ^~~~
+main.cpp:4:10: note: 'std::cout' is defined in header '<iostream>'; did you forget to '#include <iostream>'?
+main.cpp:1:1:
++#include <iostream>
+ // error: missing ) in parameter list for main
+main.cpp:4:10:
+     std::cout << "Read each file." << std::endl :
+          ^~~~
+main.cpp:4:49: error: found ':' in nested-name-specifier, expected '::'
+     std::cout << "Read each file." << std::endl :
+                                                 ^
+                                                 ::
+main.cpp:4:44: error: 'std::endl' has not been declared
+     std::cout << "Read each file." << std::endl :
+                                            ^~~~
+main.cpp:7:18: error: 'Update' was not declared in this scope
+               << Update master.
+                  ^~~~~~
+main.cpp:7:25: error: expected '}' before 'master'
+               << Update master.
+                         ^~~~~~
+main.cpp:2:12: note: to match this '{'
+ int main ( {
+            ^
+main.cpp:7:24: error: expected ')' before 'master'
+               << Update master.
+                        ^~~~~~~
+                        )
+main.cpp:2:10: note: to match this '('
+ int main ( {
+          ^
+main.cpp:10:10: error: 'cout' in namespace 'std' does not name a type
+     std::cout << "Write new master." std::endl;
+          ^~~~
+main.cpp:10:5: note: 'std::cout' is defined in header '<iostream>'; did you forget to '#include <iostream>'?
+     std::cout << "Write new master." std::endl;
+     ^~~
+main.cpp:12:5: error: expected unqualified-id before 'return'
+     return 0
+     ^~~~~~
+main.cpp:13:1: error: expected declaration before '}' token
+ }
+ ^
+make: *** [makefile:8: main] Error 1
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+main.cpp: In function 'int main()':
+main.cpp:5:17: error: 'v' was not declared in this scope
+     std::cin >> v >> v2; // error: uses "v" not "v1"
+                 ^
+main.cpp:5:17: note: suggested alternative: 'v2'
+     std::cin >> v >> v2; // error: uses "v" not "v1"
+                 ^
+                 v2
+main.cpp:7:5: error: 'cout' was not declared in this scope
+     cout << v1 + v2 << std::endl;
+     ^~~~
+main.cpp:7:5: note: suggested alternative:
+In file included from main.cpp:1:
+C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream:61:18: note:   'std::cout'
+   extern ostream cout;  /// Linked to standard output
+                  ^~~~
+make: *** [makefile:8: main] Error 1
+```
+
+**Fix:**
+
+```c++
+#include <iostream>
+
+int main()
+{
+    std::cout << "Read each file." << std::endl;
+    std::cout << "Update master." << std::endl;
+    std::cout << "Write new master." << std::endl;
+    return 0;
+}
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+Read each file.
+Update master.
+Write new master.
+
+```
+
+```c++
+#include <iostream>
+
+int main()
+{
+    int v1 = 0, v2 = 0;
+    std::cin >> v1 >> v2;
+    std::cout << v1 + v2 << std::endl;
+    return 0;
+}
+```
+
+```console
+C:\Users\SG-04\Desktop\github\c\C++ Primer>make
+g++ -Wall -o build\main main.cpp && build\main.exe
+1
+2
+3
+```
